@@ -1,31 +1,34 @@
-#include <cs50.h>
 #include <stdio.h>
-#include <math.h>
 
-int main(void)
-{
-    int billbefore_tax;
+int main() {
+    float billbefore_tax;
     do
     {
-        billbefore_tax = get_int("Bill before tax: ");
+    printf("Bill before tax: ");
+    scanf("%f", &billbefore_tax);
+    printf("Your Bill before Tax and Tip Is: %f\n", billbefore_tax);
     }
     while (billbefore_tax < 1);
 
-    int saletax_percent;
+    float saletax_percent;
     do
     {
-        saletax_percent = get_int("Sale Tax Percent: ");
+    printf("Saletax Percent: ");
+    scanf("%f", &saletax_percent);
+    printf("Your Saletax Percent Is: %f\n", saletax_percent );
     }
     while (saletax_percent < 1);
 
-    int tip_percent;
+    float tip_percent;
     do
     {
-        tip_percent= get_int("Tip Percent: ");
+    printf("Tip Percent: ");
+    scanf("%f", &tip_percent);
+    printf("Your Tip Percent Is: %f\n", tip_percent );
     }
-    while (saletax_percent < tip_percent);
+    while (tip_percent < 1);
 
-    int percentdiv = 100;
+    float percentdiv = 100;
 
     float totalbillwith_tax;
     totalbillwith_tax = (float)billbefore_tax * saletax_percent/percentdiv;
@@ -43,7 +46,7 @@ int main(void)
 
     float totality;
     totality = (float) finaltotal/percentdiv2;
-    printf("You will each owe  = %100f%%", totality);
+    printf("You Will Each Owe  = %100f%%", totality);
 
     return 0;
 
